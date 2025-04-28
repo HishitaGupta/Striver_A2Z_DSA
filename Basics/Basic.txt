@@ -1,0 +1,31 @@
+***Difference between "/n" and endl
+
+"\n" -> Functionality -  slower
+                         newline character
+        Performance - faster
+        Buffer Handling - No
+
+endl -> Functionality - faster
+                        manipulator
+                        inserts a new line
+                        flushes the output buffer (forces all buffered output to be displayed immediately)
+        Performance -   slower (perform newline as well as buffer operation)
+        Buffer Handling - Yes,(buffer flush operation can be expensive, especially in programs with frequent output operations.)
+
+***use <bits/stdc++.h> - to include all libraries at once takes negligible time in comparison time taken to run a program
+
+***DataTypes
+int,long int,long long int -> int values 
+float,double ,long double->decimal values
+str->takes word before space (for full line use getline(cin,str))
+
+
+****Range of DataTypes
+int - 4 bytes - (-2^(32)/2)-1 to (2^(32)/2)-1 
+
+***2d array
+arr [3][5]-> 3 times 5 column array , row-col
+
+***String also stores every character in terms of array indexs
+
+***Functions - void , return , parameterised , non-parameterised
