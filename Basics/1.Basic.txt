@@ -29,3 +29,6 @@ arr [3][5]-> 3 times 5 column array , row-col
 ***String also stores every character in terms of array indexs
 
 ***Functions - void , return , parameterised , non-parameterised
+        pass by value - original memory address didnot go a copy of value goes
+        pass by reference - real memory address goes into the function - ampersand in the parameter in function
+                        array passed by reference by default but with all others like vector list we have to pass amperand sign.

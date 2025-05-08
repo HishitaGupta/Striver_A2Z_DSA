@@ -1,0 +1,4 @@
+*Strategy - For the outer loop, count the number of lines.
+            - For the inner loop, count the number of columns and conect them to the no. of rows somehow.
+            -print inside the inner for loop
+            - observe symetry (optional)

@@ -1,0 +1,26 @@
+*Time Complexity != Time taken
+                    because the time taken by code to run depends on the configuration of machine like hupothetically mackbook may take lesser time than windows to run a program.
+
+*Definition =  Rate at which time taken increses with increase in input size
+
+*Complexity - in terms of Big (O) Notation - O(Time taken or no. of steps)
+            - in terms of worst case scenario - (calculate grade example)
+            - ignore the constants - whenever input size is very large constant dont hold any significance 
+                -(4N^3 + 5N^2 + 1) if N= 10^5 then adding 1 makes no difference to already large number
+            - ignore the lower values
+
+
+*Cases - BestCase, WorstCase, AverageCase
+
+*Other Notations - Big Oh Notation - worst case - upper bound
+                - Theta  Notation - average case
+                - Omega Notation - lowest bound
+
+
+***Space Complexity - memory space your program takes
+                    - auxillary space  + input space
+                    -(space taken to solve the program) + (space taken to store the program)
+                    - input a,b  - a,b -input space
+                    - c = a+b - c - auxillary space
+
+
