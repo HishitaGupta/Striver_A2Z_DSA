@@ -3,7 +3,7 @@
 //Brute Force 2 but Optimised - iterate from 1 to min(n1,n2) and keep on replacing gcd or min(n1,n2) to i and break 
 //because chances are high of finding gcd from end//- tc- O(min(n1,n2))
 
-//Optimised Approach - Euclidean Algorithm - gcd(n1,n2) = gcd(n1-n2,n2) where n1>n2
+//Optimised Approach - Euclidean Algorithm - gcd(n1,n2) = gcd(n1-n2,n2) where n1>n2 - tc- O(logi(min(a,b))) log of fi because 
 #include<bits/stdc++.h>
 using namespace std;
 
