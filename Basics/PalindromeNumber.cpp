@@ -33,3 +33,7 @@ int main(){
 	
 	checkPalindrome(n);
 }
+
+
+//Time Complexity = O(int(log10(n)+1)) -> O(log(n))
+//Space Complexity = 0(1)
