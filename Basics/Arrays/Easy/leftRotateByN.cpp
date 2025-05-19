@@ -23,7 +23,7 @@ using namespace std;
 
 //Optimal
 
-void leftRotateByN(int *arr,int n,int d){
+void leftRotateByD(int *arr,int n,int d){
 	reverse(arr,arr+d);
 	reverse(arr+d,arr+n);
 	reverse(arr,arr+n);
