@@ -60,7 +60,19 @@ void findMissingSum(int arr[],int n) {
     cout<<"Missing Number "<<sum-s2;
 }
 
+void findMissingXOR(int arr[], int n) {
+    int xor1 = 0;  // XOR of 0 to n
+    int xor2 = 0;  // XOR of array elements
 
+    for (int i = 0; i < n; i++) {
+        xor1 ^= i + 1;    // XOR of numbers from 1 to n (includes n)
+        xor2 ^= arr[i];   // XOR of actual elements
+    }
+
+    int missing = xor1 ^ xor2;
+
+    cout << "Missing Number: " << missing << endl;
+}
 
 
 int main() {
@@ -74,4 +86,6 @@ int main() {
     // findMissingBetter(arr,n);
 
     // findMissingSum(arr,n); //Optimal-1
+
+    findMissingXOR(arr,n); //Optimal -2
 }
