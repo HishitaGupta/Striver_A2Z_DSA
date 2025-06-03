@@ -62,7 +62,7 @@ void firstLastOccurence_BS(vector<int>vec,int target) {
 }
 
 int main() {
-    vector<int>vec ={1,1,1,1,2,4,5};
+    vector<int>vec ={1,1,1,1,2,4,5,6};
     // firstLastOccurence_Brute(vec,1);
     firstLastOccurence_BS(vec,1);
     // firstLastoccurence(vec,1); -> using upperbound and lowerbound
