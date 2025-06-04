@@ -55,7 +55,7 @@ int lastOccurence(vector<int> vec, int target) {
 
 void firstLastOccurence_BS(vector<int>vec,int target) {
    int fs = firstOccurence(vec,target);
-    if (fs==-1) cout<<"{-1,-1}";
+    if (fs==-1) cout<<"{-1,0}";
     else {
         cout<<"{"<<fs<<","<<lastOccurence(vec,target)<<"}";
     }
