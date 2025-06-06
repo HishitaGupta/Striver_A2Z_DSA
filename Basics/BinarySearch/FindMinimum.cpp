@@ -22,6 +22,6 @@ void findMinimum(vector<int> vec) {
 }
 
 int main() {
-    vector<int> vec ={5,6,1,2,3,4};
+    vector<int> vec ={5,6,0,1,2,3,4};
     findMinimum(vec);
 }
