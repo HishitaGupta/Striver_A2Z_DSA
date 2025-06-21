@@ -19,7 +19,7 @@ int findMaxMinDist_Simple(vector<int> &vec, int cows) {
     int n = vec[vec.size()-1]-vec[0];
     sort(vec.begin(),vec.end());
     int ans = INT_MIN;
-    for (int i=1;i<=n;i++) {
+    for (int i=1;i<=n ;i++) {
         if (isPossible(vec,i,cows)) {
             ans = i;
         }
