@@ -38,10 +38,12 @@ int minMaxUnitsAllocated(vector<int> &wallUnits, int painters) {
     return result;
 }
 
+
 int main() {
     vector<int> wallUnits = {10, 20, 30, 40, 50};
     int painters = 2;
 
     cout << minMaxUnitsAllocated(wallUnits, painters) << endl;  // Output: 90
+
     return 0;
 }

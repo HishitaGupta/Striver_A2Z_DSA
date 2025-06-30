@@ -55,6 +55,12 @@ int minMaxPages_BS(vector<int> pages , int studentNo) {
     return ans;
 }
 
+//min max pages alloted to student
+// range -  max pages , sum of all pages
+// i will find mid in this range and check how many students can be served with this pages number
+//hihihahahah
+
+
 int main() {
     vector<int> pages  = {25,46,28,49,24};
     int studentNo= 4;

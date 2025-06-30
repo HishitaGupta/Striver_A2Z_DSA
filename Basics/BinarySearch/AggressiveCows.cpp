@@ -46,9 +46,16 @@ int findMaxMinDist_BS(vector<int> &vec, int cows) {
     return ans;
 }
 
+
+
+
+
+
+
 int main() {
     vector<int> coordinates = {0,3,4,7,10,9};
     int cows = 4;
     // cout<<findMaxMinDist_Simple(coordinates,cows);
-    cout<<findMaxMinDist_BS(coordinates,cows);
+    // cout<<findMaxMinDist_BS(coordinates,cows);
+    cout<<findMaxMinDist(coordinates,cows);
 }
