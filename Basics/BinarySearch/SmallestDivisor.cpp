@@ -63,10 +63,40 @@ int smallestDivisor_BS(vector<int>vec,int threshold) {
     return ans;
 }
 
+int sumPractice(vector<int> vec, int divisor ) {
+    int sum=0;
+    for (int i=0;i<vec.size();i++) {
+        sum+=ceil((double)vec[i]/(double)divisor);
+    }
+    return sum;
+}
+
+int smallestDivisorPractice_Bs(vector<int> vec, int threshold) {
+    int low = 1;
+    int high = *max_element(vec.begin(),vec.end());
+    int ans= 0;
+
+    if (threshold < vec.size()) return 0;
+
+    while (low<=high) {
+        int mid = (low+high)/2;
+
+        if (sumPractice(vec,mid) <= threshold) {
+            ans = mid;
+            high= mid-1;
+        }else {
+            low=mid+1;
+        }
+    }
+
+    return ans;
+}
+
 
 int main() {
     vector<int> vec ={1,2,5,9};
     int threshold =6;
    // cout<< smallestDivisor_Simple(vec,threshold);
-   cout<< smallestDivisor_BS(vec,threshold);
+   // cout<< smallestDivisor_BS(vec,threshold);
+   cout<< smallestDivisorPractice_Bs(vec,threshold);
 }

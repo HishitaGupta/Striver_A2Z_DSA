@@ -30,9 +30,19 @@ int findKthMissing_Brute(vector<int> vec, int k) {
     }
 }
 
+
+// Intution
+// brute - check all no.s
+// if number > k number++;
+// stop where number is less than k
+
+
+
 int main() {
     vector<int> vec  = {2,3,4,7,11};
     int k =5;
-    // cout<<findKthMissing_BS(vec,5);
+    cout<<findKthMissing_BS(vec,5);
     cout<<findKthMissing_Brute(vec,5);
+
+
 }
