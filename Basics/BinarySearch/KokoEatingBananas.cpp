@@ -48,9 +48,13 @@ int minBananaPerHour_BS(vector<int> piles,int totalHours) {
     return ans;
 }
 
+
+
 int main() {
     vector<int> piles = {3,6,7,11};
     int totalHours =8;
     // cout<<minBananaPerHour_Simple(piles,totalHours);
     cout<<minBananaPerHour_BS(piles,totalHours);
 }
+
+//min banana per hour - min - min element max- summation

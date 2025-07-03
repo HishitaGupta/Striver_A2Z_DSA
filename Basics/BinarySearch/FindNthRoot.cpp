@@ -38,6 +38,7 @@ int findNthRoot(int num,int n) {
 
 }
 
+
 int main() {
     int num,n;
     cout<<"Enter Number to find root of:";
@@ -47,4 +48,6 @@ int main() {
     cin>>n;
 
     cout<<findNthRoot(num,n);
+
+    // cout<<findNthRootPractice(num,n);
 }
