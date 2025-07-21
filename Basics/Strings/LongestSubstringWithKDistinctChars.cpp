@@ -31,15 +31,16 @@ int LongestSubstringWithKChars(string s,int k) {
 
         while (freq.size()>k) {
             freq[s[l]]--;
-            if (freq[s[l]]==0) freq.erase(freq[s[l]]);
+            if (freq[s[l]]==0) freq.erase(s[l]);
             l++;
         }
 
         if (freq.size()<=k) {
             maxLen =max(maxLen,r-l+1);
-            r++;
+
         }
 
+        r++;
 
     }
 
