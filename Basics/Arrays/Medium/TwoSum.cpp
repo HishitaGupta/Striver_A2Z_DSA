@@ -38,7 +38,10 @@ void twoSumOptimal(vector<int>vec,int target) {
 
 int main(){
 
+
     vector<int> vec={2,2,6,8,11};
+
+    vector<int> vec1={2,2,6,8,11};
 
     // twoSumBetter(vec,14);
     twoSumOptimal(vec,14);
