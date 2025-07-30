@@ -182,40 +182,45 @@ Node* insertTail(Node* head, int data) {
 
 }
 
-Node* insertAtPosition(Node* head, int k,int value) {
+Node* insertAtPosition(Node* head, int k, int value) {
     if (!head) return nullptr;
 
-    if (k==1) return insertHead(head,value);
+    if (k == 1) return insertHead(head, value);
 
     Node* temp = head;
+    int count = 1;
 
-    int count=0;
-
-    while (temp->next != NULL) {
+    while (temp != NULL && count < k - 1) {
+        temp = temp->next;
         count++;
-        if (count==k-1) {
-            break;
-        }
-        temp= temp->next;
     }
 
-    Node* newNode = new Node(value);
+    // Check if position k-1 exists
+    if (!temp) return head; // invalid position, return unchanged list
 
+    Node* newNode = new Node(value);
     Node* front = temp->next;
 
     temp->next = newNode;
-    if (front) front->prev = newNode;
-
     newNode->prev = temp;
+
     newNode->next = front;
+    if (front) front->prev = newNode;
 
     return head;
 }
 
+
 Node* insertBeforeValue(Node* head, int k,int value) {
     if (!head) return nullptr;
 
-    if (k==1) return insertHead(head,value);
+    if (head->data==k) {
+        Node * newNode = new Node(value);
+        newNode->next = head;
+        head->prev=newNode;
+
+        return newNode;
+    }
 
     Node* temp = head;
 
@@ -227,7 +232,7 @@ Node* insertBeforeValue(Node* head, int k,int value) {
         temp= temp->next;
     }
 
-    if (!temp) return NULL;
+    if (temp->data!=k) return NULL;
 
     Node* newNode = new Node(value);
 
