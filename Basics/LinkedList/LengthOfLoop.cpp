@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -31,39 +32,47 @@ Node* convertToLL(vector<int> arr) {
 
     }
 
+    mover->next=head;
+
     return head;
 }
-
-bool detectALoop_brute(Node* head){
+int lengthOfLoop_brute(Node* head){
     Node* temp=head;
     map<Node*,int> mpp;
+    int count=1;
+
 
     while(temp!=NULL){
-        if (mpp.find(temp)!=mpp.end()){
-            return true;
+        if (mpp.find(temp)!= mpp.end()) {
+            return count-mpp[temp];
         }
-        mpp[temp]=1;
+        mpp[temp]=count;
+        count++;
         temp=temp->next;
-
     }
 
-    return false;
+    return 0;
 
 }
 
 
-bool detectALoop_Optimal(Node* head) {
+bool ReturnStartOfLoop_Optimal(Node* head) {
     Node * slow=head; Node* fast=head;
 
-    while (fast!=NULL && fast->next != NULL) {
+    while (fast!=NULL && fast->next != NULL ) {
         slow=slow->next;
         fast=fast->next->next;
         if (slow==fast) {
-            return true;
+            slow=head;
+            while (slow!=fast) {
+                slow=slow->next;
+                fast=fast->next;
+            }
+            return slow; //start
         }
     }
 
-    return false;
+    return NULL;
 }
 
 
@@ -73,8 +82,8 @@ int main() {
 
     vector<int> arr = {1,2,3,4,5,6,7,8,9,10};
     Node* head =convertToLL(arr);
-    cout<<detectALoop_Optimal(head);
-    // cout<<detectALoop_brute(head);
+    cout<<lengthOfLoop_brute(head);
+
 
 
 

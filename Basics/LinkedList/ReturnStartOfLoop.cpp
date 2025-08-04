@@ -31,39 +31,45 @@ Node* convertToLL(vector<int> arr) {
 
     }
 
+    mover->next=head;
+
     return head;
 }
 
-bool detectALoop_brute(Node* head){
+Node* ReturnStartOfLoop_brute(Node* head){
     Node* temp=head;
     map<Node*,int> mpp;
 
     while(temp!=NULL){
-        if (mpp.find(temp)!=mpp.end()){
-            return true;
+        if (mpp.find(temp)!= mpp.end()) {
+            return temp;
         }
         mpp[temp]=1;
         temp=temp->next;
-
     }
 
-    return false;
+    return NULL;
 
 }
 
 
-bool detectALoop_Optimal(Node* head) {
+bool ReturnStartOfLoop_Optimal(Node* head) {
     Node * slow=head; Node* fast=head;
 
-    while (fast!=NULL && fast->next != NULL) {
+    while (fast!=NULL && fast->next != NULL ) {
         slow=slow->next;
         fast=fast->next->next;
         if (slow==fast) {
-            return true;
+            slow=head;
+            while (slow!=fast) {
+                slow=slow->next;
+                fast=fast->next;
+            }
+            return slow; //start
         }
     }
 
-    return false;
+    return NULL;
 }
 
 
@@ -73,8 +79,8 @@ int main() {
 
     vector<int> arr = {1,2,3,4,5,6,7,8,9,10};
     Node* head =convertToLL(arr);
-    cout<<detectALoop_Optimal(head);
-    // cout<<detectALoop_brute(head);
+    cout<<ReturnStartOfLoop_brute(head);
+
 
 
 
