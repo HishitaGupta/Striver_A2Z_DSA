@@ -43,7 +43,7 @@ int lengthOfLoop_brute(Node* head){
 
 
     while(temp!=NULL){
-        if (mpp.find(temp)!= mpp.end()) {
+         if (mpp.find(temp)!= mpp.end()) {
             return count-mpp[temp];
         }
         mpp[temp]=count;
@@ -56,23 +56,25 @@ int lengthOfLoop_brute(Node* head){
 }
 
 
-bool ReturnStartOfLoop_Optimal(Node* head) {
+int LengthOfLoop_Optimal(Node* head) {
     Node * slow=head; Node* fast=head;
+
 
     while (fast!=NULL && fast->next != NULL ) {
         slow=slow->next;
         fast=fast->next->next;
         if (slow==fast) {
-            slow=head;
-            while (slow!=fast) {
-                slow=slow->next;
+            int count=1;
+            fast=fast->next;
+            while (fast!=slow) {
                 fast=fast->next;
+                count++;
             }
-            return slow; //start
+            return count;
         }
     }
 
-    return NULL;
+    return 0;
 }
 
 
@@ -82,7 +84,9 @@ int main() {
 
     vector<int> arr = {1,2,3,4,5,6,7,8,9,10};
     Node* head =convertToLL(arr);
-    cout<<lengthOfLoop_brute(head);
+    // cout<<lengthOfLoop_brute(head);
+    cout<<LengthOfLoop_Optimal(head);
+
 
 
 
