@@ -1,47 +1,34 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-void findMajorityElementBrute(vector<int> vec) {
+//largest subarray with 0 sum
+
+void largestSubarrayWithZeroSum(vector<int> vec) {
     int n= vec.size();
-    int min = (int) n/3;
-    int count =0; vector<int>ls;
+    map<int,int>mp;
+    int sum=0;
+    int maxLen=0;
 
     for (int i=0;i<n;i++) {
-        count =0;
-        for (int j=0;j<n;j++) {
-
-            if (vec[j]==vec[i]) {
-                count++;
-            }
-
-            if (count> min && ls[0]!=vec[i]) {
-                ls.push_back(vec[i]);
-            }
-
-            if (ls.size()==2) {
-                break;
-            }
-
+        sum+=vec[i];
+        if (sum==0) {
+            maxLen = max(maxLen,i+1);
         }
 
-
-
-
-
+        if (mp.find(sum)!=mp.end()) {
+            maxLen  = max(maxLen , i-mp[sum]);
+        }else {
+            mp[sum]=i;
+        }
     }
+
+    cout<<maxLen;
 }
 
 
 
-
-
-
-
-
 int main() {
-    vector<int> vec={1,1,1,1,2,5,3,4};
-    findMajorityElementBrute(vec);
-    // findMajorityNumberBetter(vec);
+    vector<int> vec = {-2,-2,-4,2,3,3,0,1,2,1,8};
+    largestSubarrayWithZeroSum(vec);
 
-    // findMajorityNumberOptimal(vec);
 }

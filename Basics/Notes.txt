@@ -1,0 +1,27 @@
+Interview Ques
+
+1. Why unordered_map takes O(1) time ?
+    Average O(1): Hash function distributes keys uniformly across buckets → only a few collisions per bucket.
+    Worst O(n): If all keys hash to the same bucket, operations degrade to scanning that bucket → O(n).
+
+
+2. Why map takes O(log n ) time ?
+    Because map uses a self-balancing tree (Red–Black Tree).
+    After every insert/erase, the tree performs rotations and recoloring to keep height balanced.
+    This guarantees that the height is always O(log n), never degenerates into O(n) (like a normal unbalanced BST could).
+           30
+          /  \
+        20    40
+       /       \
+     10         50
+    At each node half search space is getting eliminated.
+
+
+3. What causes collisions?
+    Different keys hashing to the same bucket.
+    Example: 42 % 5 == 2 and 2 % 5 == 2.
+    Resolved by chaining (linked lists) or open addressing.
+
+4. What is rehashing?
+When the load factor (size / bucket_count) exceeds a threshold, unordered_map doubles bucket
+count and redistributes all elements → keeps O(1) average intact.
