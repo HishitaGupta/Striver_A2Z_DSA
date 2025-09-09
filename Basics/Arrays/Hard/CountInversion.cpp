@@ -66,10 +66,8 @@ void countInversionBrute(vector<int>& vec) {
 }
 
 
-
-
 int main() {
     vector<int> vec ={5,3,4,2,1};
-    // countInversionOptimal(vec);
-    countInversionBrute(vec);
+    countInversionOptimal(vec);
+    // countInversionBrute(vec);
 }
